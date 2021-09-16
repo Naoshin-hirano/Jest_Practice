@@ -7,6 +7,11 @@
       <p>給料: {{ job.salary }}円</p>
       <p>都道府県: {{ job.prefectures }}</p>
       <p>市町村: {{ job.city }}</p>
+      <v-btn
+       color="success"
+       class="mr-2"
+       :to="{name: 'editor', params: { id: job.id }}"
+      >編集する</v-btn>
     </v-container>
   </div>
 </template>
