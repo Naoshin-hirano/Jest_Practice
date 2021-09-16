@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-container>
-      <h1>Job Boards</h1>
       <div v-for="job in jobs" :key="job.pk">
         <h2>
           <router-link
