@@ -55,8 +55,7 @@ export default {
     props: {
     id: {
       type: Number,
-      required: false,
-      default: 0
+      required: false
       }
     },
     data(){
@@ -77,7 +76,7 @@ export default {
             let method = 'POST';
             if(this.id !== undefined){
                 endpoint += `${this.id}/`;
-                method = 'PUT'
+                method = 'PUT';
             }
             apiService(endpoint, method, {
                 company_name: this.company_name,
@@ -86,7 +85,7 @@ export default {
                 job_description: this.job_description,
                 salary: this.salary,
                 prefectures: this.prefectures,
-                city: this.city,
+                city: this.city
             }).then(job_data => {
                 this.$router.push({
                     name: 'job',

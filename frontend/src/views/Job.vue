@@ -12,6 +12,11 @@
        class="mr-2"
        :to="{name: 'editor', params: { id: job.id }}"
       >編集する</v-btn>
+      <v-btn
+       color="error"
+       @click="deleteJobData"
+      >削除
+      </v-btn>
     </v-container>
   </div>
 </template>
@@ -34,7 +39,7 @@ export default {
   },
   methods: {
     setPageTitle(title){
-    document.title = title;
+      document.title = title;
     },
     getJobData(){
       let endpoint = `/api/jobs/${this.id}/`;
@@ -42,6 +47,14 @@ export default {
         this.job = data;
         this.setPageTitle(data.company_name);
       })
+    },
+    deleteJobData(){
+      let endpoint = `/api/jobs/${this.id}/`;
+      apiService(endpoint, 'DELETE').then(() => {
+        this.$router.push({
+          name: 'home'
+        });
+      });
     }
   },
   created(){
