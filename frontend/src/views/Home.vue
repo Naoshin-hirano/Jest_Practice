@@ -16,6 +16,7 @@
       <div class="my-4">
         <p v-show="loadingJobs">...loading...</p>
         <v-btn
+            id="success"
             v-show="next"
             @click="getJobs"
             color="success"

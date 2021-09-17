@@ -11,4 +11,11 @@ describe("Home.vue ", () => {
       'Job Board'
     );
   });
+
+  it("button has correct text renderd", () => {
+    const wrapper = shallowMount(Home);
+    expect(wrapper.find('#success').text()).toBe(
+      'Load More'
+    );
+  })
 });
